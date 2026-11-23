@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de Fotografia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Portfólio de Fotografia</h1>
+    <nav>
+      <ul>
+        <li><a href="#" class="tab-btn active" data-tab="inicio">Início</a></li>
+        <li><a href="#" class="tab-btn" data-tab="galeria">Galeria</a></li>
+        <li><a href="#" class="tab-btn" data-tab="sobre">Sobre</a></li>
+        <li><a href="#" class="tab-btn" data-tab="contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Input invisível para adicionar fotos na categoria escolhida -->
+    <input type="file" id="category-file-input" accept="image/*" multiple hidden>
+
+    <!-- Aba Início -->
+    <section id="inicio" class="tab-content active">
+      <div class="welcome-card">
+        <h2>Bem-vindo ao meu Portfólio</h2>
+        <p>Clique em <strong>Paisagem</strong>, <strong>Urbano</strong> ou <strong>Retrato</strong> para adicionar fotos na galeria correspondente.</p>
+      </div>
+
+      <!-- Os 3 cards de categoria da atividade -->
+      <div class="gallery">
+        <div class="image category-btn" id="image1" data-category="Paisagem"></div>
+        <div class="image category-btn" id="image2" data-category="Urbano"></div>
+        <div class="image category-btn" id="image3" data-category="Retrato"></div>
+      </div>
+    </section>
+
+    <!-- Aba Galeria (Dividida em 3 galerias separadas) -->
+    <section id="galeria" class="tab-content">
+      <div class="section-header">
+        <h2>Galeria de Ensaios</h2>
+        <p>Cada categoria possui sua própria galeria organizada abaixo. Clique em qualquer foto para destacá-la.</p>
+      </div>
+
+      <!-- Galeria 1: Paisagem -->
+      <div class="category-group">
+        <div class="category-group-header">
+          <h3>🌄 Galeria • Paisagem</h3>
+          <button type="button" class="add-cat-btn" data-category="Paisagem">+ Adicionar em Paisagem</button>
+        </div>
+        <div class="gallery" id="grid-Paisagem">
+          <div class="image category-btn" id="image1" data-category="Paisagem"></div>
+        </div>
+      </div>
+
+      <!-- Galeria 2: Urbano -->
+      <div class="category-group">
+        <div class="category-group-header">
+          <h3>🏙️ Galeria • Urbano</h3>
+          <button type="button" class="add-cat-btn" data-category="Urbano">+ Adicionar em Urbano</button>
+        </div>
+        <div class="gallery" id="grid-Urbano">
+          <div class="image category-btn" id="image2" data-category="Urbano"></div>
+        </div>
+      </div>
+
+      <!-- Galeria 3: Retrato -->
+      <div class="category-group">
+        <div class="category-group-header">
+          <h3>👤 Galeria • Retrato</h3>
+          <button type="button" class="add-cat-btn" data-category="Retrato">+ Adicionar em Retrato</button>
+        </div>
+        <div class="gallery" id="grid-Retrato">
+          <div class="image category-btn" id="image3" data-category="Retrato"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aba Sobre -->
+    <section id="sobre" class="tab-content">
+      <div class="info-card">
+        <h2>Sobre o Projeto</h2>
+        <p>Este portfólio foi desenvolvido para apresentar trabalhos fotográficos organizados por tema, utilizando transições e animações modernas em CSS e JavaScript.</p>
+        <div class="tags">
+          <span>Paisagens</span>
+          <span>Fotografia Urbana</span>
+          <span>Retratos</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aba Contato -->
+    <section id="contato" class="tab-content">
+      <div class="info-card">
+        <h2>Entre em Contato</h2>
+        <p>Gostou do trabalho ou quer agendar um ensaio? Envie uma mensagem abaixo:</p>
+        <form id="contact-form">
+          <input type="text" placeholder="Seu nome" required>
+          <input type="email" placeholder="Seu e-mail" required>
+          <textarea rows="4" placeholder="Sua mensagem..." required></textarea>
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+        <p id="form-feedback" class="feedback-msg"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Portfólio de Fotografia</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
